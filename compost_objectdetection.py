@@ -59,5 +59,9 @@ sf = sf_images.join(sf_annotations, on='name', how='left')
 # lists instead using fillna.
 sf['annotations'] = sf['annotations'].fillna([])
 
+model = tc.object_detector.create(sf)
+model.save('temp.model')
+
+
 # Save SFrame
-sf.save('compost_new_new.sframe')
+#sf.save('compost_new_new.sframe')
